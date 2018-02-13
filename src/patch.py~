@@ -1,0 +1,22 @@
+from pylab import *
+from matplotlib.path import Path
+import matplotlib.patches as patches
+
+data = np.random.rand(100,2)
+
+# ROI setting
+verts = [(0.3, 0.7), (0.3, 0.3), (0.7, 0.3), (0.7, 0.7),(0.3, 0.7) ]
+
+# Into ROI
+path1 = Path(verts)
+# index = data in ROI
+index = path1.contains_points(data)
+
+# data plot
+plot(data[:,0],data[:,1], 'b.')
+#patch = patches.PathPatch(path1, facecolor='orange', lw=2)
+#gca().add_patch(patch)
+
+# index plot
+plot(data[index,0], data[index,1], 'r.')
+show()

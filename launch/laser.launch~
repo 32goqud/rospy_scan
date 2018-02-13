@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="rospy_laser" type="scan.py" name="scan" output="screen"></node>
+</launch>
+
+
+
+
